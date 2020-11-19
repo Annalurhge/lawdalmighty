@@ -136,7 +136,6 @@ bot.on('messageDelete', async msg => {
         .addField('Deleted By: ', executor, true)
         .addField('Deleted Message: ', msg)
         .addField('Channel: ', msg.channel.toString())
-        .addField('Message Link:', msg.url)
         .addField('When: ', msg.createdAt);
 
     lmao.send(babi);
