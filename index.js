@@ -107,7 +107,7 @@ bot.on('messageUpdate', async (oldMessage, newMessage) => {
         .addField('Previous Message: ', oldMessage.content, true)
         .addField('New Message: ', newMessage.content, true)
         .addField('Channel: ', newMessage.channel.toString())
-        .addField('Message Link:', msg.url)
+        .addField('Message Link:', newMessage.url)
         .addField('When: ', oldMessage.createdAt);
     lmao.send(baba);
 })
