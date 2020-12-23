@@ -28,6 +28,9 @@ var muterole = ['712213025246937099'];
 //
 let mimiti;
 let disisti;
+
+
+
 bot.on('ready', () => {
 
     console.log('Bot is online!');
@@ -43,6 +46,7 @@ bot.on('ready', () => {
             .addField('STATUS:', 'Started')
         lmao.send(adaoy)
     })
+
 
 })
 bot.on('disconnect', () => {
@@ -348,6 +352,7 @@ bot.on('message', msg => {
             let chaninfo = msg.mentions.channels.first()
             let person = msg.mentions.users.first()
             if (msg.mentions.roles.first()) return msg.channel.send('I am unable to send information')
+            if (!args[1]){return msg.channel.send('Please include an argument')}
 
             if (person) {
 
@@ -363,7 +368,7 @@ bot.on('message', msg => {
                     .setFooter('Bot Made By: Annalurhge; Bot Version: ' + version)
                     .addField('User Name/Tag: ', person.tag, true)
                     .addField('User ID: ', person.id, true)
-                    .addField('Roles :', rolesIHave)
+                    .addField('Roles: '+rolesIHave.length, rolesIHave)
                     .addField('Date account was created: ', person.createdAt)
                     .addField('Date account joined the server: ', msg.guild.member(person.id).joinedAt)
                 //.addField('Roles: ' + role)
