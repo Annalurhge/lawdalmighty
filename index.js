@@ -357,8 +357,8 @@ bot.on('message', msg => {
             if (person) {
 
                 var rolesIHave = []
-                if (msg.guild.member(member.user.id).roles.highest.id == msg.guild.id) { rolesIHave.push("No roles found") } else {
-                    rolesIHave.push(msg.guild.member(member.user.id).roles.cache.array().sort((a, b) => b.position - a.position).slice(0, -1))
+                if (msg.guild.member(person.id).roles.highest.id == msg.guild.id) { rolesIHave.push("No roles found") } else {
+                    rolesIHave.push(msg.guild.member(person.id).roles.cache.array().sort((a, b) => b.position - a.position).slice(0, -1))
                 }//}
                 const userembed = new Discord.MessageEmbed()
                     .setTitle("User's Information")
@@ -401,7 +401,7 @@ bot.on('message', msg => {
                     msg.channel.send(userembed);
                 }
 
-                if (msg.mentions.channels.first()) {
+                if (chaninfo) {
                     const chanembed = new Discord.MessageEmbed()
                         .setTitle("Channel Information")
                         .setColor(Math.floor(Math.random() * 16777214) + 1)
